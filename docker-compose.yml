@@ -1,0 +1,23 @@
+version: '3.7'
+
+services:
+
+  front.primeit:
+    container_name: front.primeit
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      VUE_APP_API_BASE_URL: "http://localhost/api"
+    command: sh -c "npm install --legacy-peer-deps && chown -R node /app/node_modules && npm run dev --host"
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
+    expose:
+      - 3000
+    tty: true
+
+networks:
+  default:
+    external:
+      name: sail

@@ -33,6 +33,7 @@
           mdi-pencil
         </v-icon>
         <v-icon
+          id="editar"
           color="error"
           class="me-2"
           @click="remover(item.id)"

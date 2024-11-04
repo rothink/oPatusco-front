@@ -45,4 +45,11 @@ export default defineConfig({
     host: true,
     port: 3000,
   },
+  test: {
+    setupFiles: "vuetify.config.js",
+    deps: {
+      inline: ["vuetify"],
+    },
+    globals: true,
+  },
 })

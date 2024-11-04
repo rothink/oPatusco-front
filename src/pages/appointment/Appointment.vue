@@ -1,4 +1,5 @@
 <template>
+  <h4 class="text-center">Lista de agendamentos</h4>
   <v-card
     class="pa-4"
     :loading="isLoading"
@@ -23,6 +24,7 @@
   <v-container>
     <v-row justify="end">
       <v-btn
+        id="new"
         color="secondary"
         @click="gotToForm"
         v-if="user?.role !== RoleEnum.MEDICO"

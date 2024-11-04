@@ -23,6 +23,7 @@ axios.interceptors.response.use(
     if (error.response.status === 401 &&
       error.response.data.message === 'Unauthenticated.'
     ) {
+      router.push('/login')
       return Promise.reject(error.response)
     }
     return Promise.reject(error.response)

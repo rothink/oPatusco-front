@@ -1,4 +1,4 @@
-CONTAINER_NAME=front.app
+CONTAINER_NAME=front.primeit
 
 # Instala a aplicação e sobe o sistema
 install:
@@ -14,3 +14,7 @@ up:
 # Entra no bash do container
 bash:
 	docker exec -it $(CONTAINER_NAME) bash
+
+test:
+	docker exec -it ${CONTAINER_NAME} npx vitest
+

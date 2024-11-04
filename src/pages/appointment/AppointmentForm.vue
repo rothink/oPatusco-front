@@ -12,6 +12,7 @@
             variant="outlined"
             density="compact"
             :disabled="form.user_id"
+            name="person_name"
           ></v-text-field>
           <v-text-field
             label="Nome do Animal"
@@ -20,6 +21,7 @@
             outlined
             variant="outlined"
             density="compact"
+            name="animal_name"
           ></v-text-field>
           <v-select
             label="Tipo de Animal"
@@ -29,6 +31,7 @@
             outlined
             variant="outlined"
             density="compact"
+            name="animal_type_id"
           ></v-select>
           <v-text-field
             label="Idade do Animal (em anos)"
@@ -38,6 +41,7 @@
             outlined
             variant="outlined"
             density="compact"
+            name="animal_age"
           ></v-text-field>
           <v-textarea
             label="Sintomas"
@@ -46,6 +50,7 @@
             outlined
             variant="outlined"
             density="compact"
+            name="symptoms"
           ></v-textarea>
           <v-text-field
             label="Data da Consulta"
@@ -55,8 +60,9 @@
             outlined
             variant="outlined"
             density="compact"
+            name="appointment_date"
           ></v-text-field>
-          <v-radio-group v-model="form.appointment_period" :rules="[rules.required]" row>
+          <v-radio-group v-model="form.appointment_period" :rules="[rules.required]" row name="appointment_period">
             <v-radio label="Manhã" value="morning"></v-radio>
             <v-radio label="Tarde" value="afternoon"></v-radio>
           </v-radio-group>
@@ -64,7 +70,7 @@
       </v-card-text>
 
       <v-card-actions>
-        <v-btn color="primary" @click="submitForm" :disabled="!isFormValid" variant="tonal">
+        <v-btn color="primary" @click="submitForm" :disabled="!isFormValid" variant="tonal" id="agendar-consulta">
           {{ id ? 'Atualizar agendamento de Consulta' : 'Agendar Consulta' }}
         </v-btn>
         <BackButtons/>

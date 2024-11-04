@@ -14,6 +14,9 @@
   >
         make install
 
+- Rodar os testes
+  >
+        make test
 
 - go to page
   >
